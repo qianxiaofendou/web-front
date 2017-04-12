@@ -19,7 +19,7 @@ $.ajax({
 * status  ：返回的HTTP状态码，比如常见的404,500等错误代码。
 * statusText ：对应状态码的错误信息，比如404错误信息是not found,500是Internal Server Error。
 * responseText ：服务器响应返回的文本信息
-* 
+
 ### 第二个参数 textStatus（String 字符串）
 返回的是字符串类型，表示返回的状态，根据服务器不同的错误可能返回下面这些信息：
 * “timeout”（超时）

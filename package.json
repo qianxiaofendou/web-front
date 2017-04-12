@@ -1,0 +1,19 @@
+{
+  "name": "web-front",
+  "version": "1.0.0",
+  "description": "web resource document",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qianxiaofendou/web-front.git"
+  },
+  "author": "qianxiaofendou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qianxiaofendou/web-front/issues"
+  },
+  "homepage": "https://github.com/qianxiaofendou/web-front#readme"
+}
