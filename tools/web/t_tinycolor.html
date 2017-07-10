@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>颜色处理工具的使用</title>
+	<script type="text/javascript" src='../lib/tinycolor-min.js'></script>
+	<style type="text/css">
+      body{
+      	margin:20px;
+      	font-size: 15px;
+      }
+      .f-group{margin:10px 0px;}
+      .f-group span.tips{color:#666;margin-left:8px;font-size: 12px;}
+      .f-group input{display: inline-block;margin-right: 10px;}
+	</style>
+</head>
+<body>
+	
+	<div>
+		<div class="f-group">
+			<label>颜色：</label><input id="color" type="text" /><span class='tips'>注：输入类似"#000  #cc0000 rgb(20,20,20) rgba(20,20,20,0.5)"</span>
+		</div>
+		<div class="f-group">
+			<input type="button" value="颜色转换16进制" id="btn-change"/>
+			<input type="button" value="颜色转换rgb" id="btn-change2"/>
+		</div>
+		<div class="f-group">
+			<span id="colorOut"></span>
+		</div>
+	</div>
+
+
+	<script type="text/javascript">
+      function isColor(val){
+      	   val = val.replace(/\s/g,'');
+            //下面这个可以验证'#000  #cc0000 rgb(20,20.20) rgb(20,20,20,0.5)'
+            return /(^#([0-9a-fA-F]{6}|[0-9a-fA-F]{3})$)|(^[rR][gG][Bb][Aa]?[\(]([\s]*(2[0-4][0-9]|25[0-5]|[01]?[0-9][0-9]?),){2}[\s]*(2[0-4][0-9]|25[0-5]|[01]?[0-9][0-9]?),?[\s]*(0\.\d{1,2}|1|0)?[\)]{1}$)/.test(val);
+      }
+
+      var btnChange = document.getElementById('btn-change');
+      btnChange.onclick=function(){
+      	 var color = document.getElementById('color');
+      	 var colorout = document.getElementById('colorOut');
+      	 var val = color.value;
+      	 if(val && isColor(val)){
+      	 	colorout.innerHTML = tinycolor(val).toHexString();
+      	 	console.log(tinycolor(val).toHexString());
+      	 }else{
+      	 	alert('颜色输入不正确，请重新输入');
+      	 }
+      	 
+      }
+
+      var btnChange2 = document.getElementById('btn-change2');
+      btnChange2.onclick=function(){
+      	 var color = document.getElementById('color');
+      	 var colorout = document.getElementById('colorOut');
+      	 var val = color.value;
+      	 if(val && isColor(val)){
+      	 	colorout.innerHTML = tinycolor(val).toRgbString();
+      	 	console.log(tinycolor(val).toRgbString());
+      	 }else{
+      	 	alert('颜色输入不正确，请重新输入');
+      	 }
+      	 
+      }
+
+	</script>
+</body>
+</html>
